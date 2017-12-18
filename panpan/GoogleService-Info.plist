@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>534530637346-1bp0528bid88vsp48oiim47pihelrs3h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.534530637346-1bp0528bid88vsp48oiim47pihelrs3h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQsQMdTr9pdwTdIzIVj-k_Kgz1579mwaU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>534530637346</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.doriandelorme.panpan</string>
+	<key>PROJECT_ID</key>
+	<string>panpan-9b241</string>
+	<key>STORAGE_BUCKET</key>
+	<string>panpan-9b241.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:534530637346:ios:77247e3f7b51fa05</string>
+	<key>DATABASE_URL</key>
+	<string>https://panpan-9b241.firebaseio.com</string>
+</dict>
+</plist>
