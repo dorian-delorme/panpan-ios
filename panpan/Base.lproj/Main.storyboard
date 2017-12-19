@@ -48,11 +48,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="6Sf-gS-Jjh">
             <objects>
-                <viewController storyboardIdentifier="ViewLogged" id="rWh-ms-1oC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Kx-eR-sEf">
+                <viewController storyboardIdentifier="ViewLogged" id="rWh-ms-1oC" customClass="SearchViewController" customModule="panpan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ViewLogged" id="2Kx-eR-sEf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -62,18 +62,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrivée" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-GS-A2n">
+                                <rect key="frame" x="20" y="161" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Départ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-he-z9H">
+                                <rect key="frame" x="20" y="121" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GT2-sp-kXB">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Valider"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4hK-he-z9H" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="2UP-Il-L9p"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="bottom" secondItem="GT2-sp-kXB" secondAttribute="bottom" constant="20" id="5K8-eV-46b"/>
+                            <constraint firstItem="tAF-GS-A2n" firstAttribute="centerX" secondItem="2Kx-eR-sEf" secondAttribute="centerX" id="7px-3D-0PK"/>
+                            <constraint firstItem="tAF-GS-A2n" firstAttribute="top" secondItem="4hK-he-z9H" secondAttribute="bottom" constant="90" id="DsI-1Z-8il"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="tAF-GS-A2n" secondAttribute="trailing" constant="20" id="FfZ-Jn-HqL"/>
+                            <constraint firstItem="4hK-he-z9H" firstAttribute="top" secondItem="GdY-nM-1Gf" secondAttribute="bottom" constant="60" id="K0v-76-oJA"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="4hK-he-z9H" secondAttribute="trailing" constant="20" id="Kn1-Rg-dT4"/>
+                            <constraint firstItem="tAF-GS-A2n" firstAttribute="top" secondItem="4hK-he-z9H" secondAttribute="bottom" constant="70" id="KnW-x6-07s"/>
+                            <constraint firstItem="4hK-he-z9H" firstAttribute="centerX" secondItem="2Kx-eR-sEf" secondAttribute="centerX" id="MdX-Kb-gLN"/>
+                            <constraint firstItem="tAF-GS-A2n" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="PKZ-L6-1E6"/>
                             <constraint firstItem="GdY-nM-1Gf" firstAttribute="top" secondItem="g4h-zg-8XA" secondAttribute="top" constant="20" id="Qq3-w0-7Rl"/>
+                            <constraint firstItem="tAF-GS-A2n" firstAttribute="top" secondItem="4hK-he-z9H" secondAttribute="bottom" constant="10" id="XqJ-Hl-O96"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="GT2-sp-kXB" secondAttribute="trailing" constant="20" id="dG0-W6-lQK"/>
+                            <constraint firstItem="GT2-sp-kXB" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="rDv-U9-Aqo"/>
                             <constraint firstItem="GdY-nM-1Gf" firstAttribute="centerX" secondItem="2Kx-eR-sEf" secondAttribute="centerX" id="xx3-4G-7eN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g4h-zg-8XA"/>
                     </view>
+                    <connections>
+                        <outlet property="DepartureTextField" destination="4hK-he-z9H" id="yK5-vd-WER"/>
+                        <outlet property="DestinationTextField" destination="tAF-GS-A2n" id="96S-mY-lPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlK-mV-9Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="29"/>
+            <point key="canvasLocation" x="1348" y="28.335832083958024"/>
         </scene>
     </scenes>
 </document>

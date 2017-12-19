@@ -14,6 +14,7 @@
 		B050C70E1FE7F88300E5F8CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B050C70D1FE7F88300E5F8CC /* Assets.xcassets */; };
 		B050C7111FE7F88300E5F8CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B050C70F1FE7F88300E5F8CC /* LaunchScreen.storyboard */; };
 		B050C7191FE7F91B00E5F8CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B050C7181FE7F91B00E5F8CC /* GoogleService-Info.plist */; };
+		B0D9BEE51FE949A3009FFFFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B050C7101FE7F88300E5F8CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B050C7121FE7F88300E5F8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B050C7181FE7F91B00E5F8CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C381CD9EBAE8FB2EF73C2E7F /* Pods-panpan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panpan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-panpan/Pods-panpan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				B050C7061FE7F88300E5F8CC /* AppDelegate.swift */,
 				B050C7081FE7F88300E5F8CC /* ViewController.swift */,
 				B050C70A1FE7F88300E5F8CC /* Main.storyboard */,
+				B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */,
 				B050C70D1FE7F88300E5F8CC /* Assets.xcassets */,
 				B050C70F1FE7F88300E5F8CC /* LaunchScreen.storyboard */,
 				B050C7121FE7F88300E5F8CC /* Info.plist */,
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D9BEE51FE949A3009FFFFB /* SearchViewController.swift in Sources */,
 				B050C7091FE7F88300E5F8CC /* ViewController.swift in Sources */,
 				B050C7071FE7F88300E5F8CC /* AppDelegate.swift in Sources */,
 			);
