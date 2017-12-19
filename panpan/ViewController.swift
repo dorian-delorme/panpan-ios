@@ -10,10 +10,14 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import FirebaseAuth
+import Alamofire
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var labelStatus: UILabel!
+    
+    @IBOutlet weak var FirstNameTextField: UITextField!
+    @IBOutlet weak var LastNameTextField: UITextField!
+    @IBOutlet weak var EmailSigninTextField: UITextField!
+    @IBOutlet weak var PasswordSigninTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +29,45 @@ class ViewController: UIViewController {
         view.addSubview(loginButton)
         
     }
-
+    @IBAction func SigninButton(_ sender: Any) {
+        sendCreateUserRequest()
+    }
     
-    @IBAction func testLogin(_ sender: Any) {
-        if let accessToken = AccessToken.current {
-            labelStatus.text = "Connecté: \(accessToken)"
-        } else {
-            labelStatus.text = "Non connecté"
+    func sendCreateUserRequest() {
+        let name = FirstNameTextField.text! + " " + LastNameTextField.text!
+        let email = EmailSigninTextField.text
+        let password = PasswordSigninTextField.text
+        
+        /**
+         Create User
+         post https://panpan-api.herokuapp.com/users
+         */
+        
+        // Add Headers
+        let headers = [
+            "Content-Type":"application/json; charset=utf-8",
+            ]
+        
+        // JSON Body
+        let body: [String : Any] = [
+            "user": [
+                "email": email!,
+                "fullname": name,
+                "password": password!
+            ]
+        ]
+        
+        // Fetch Request
+        Alamofire.request("https://panpan-api.herokuapp.com/users", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if (response.result.error == nil) {
+                    debugPrint("HTTP Response Body: \(response.data)")
+                    print(response)
+                }
+                else {
+                    debugPrint("HTTP Request failed: \(response.result.error)")
+                }
         }
     }
     
