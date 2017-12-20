@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Alamofire
+import SwiftyJSON
 
 class SearchViewController: UIViewController {
     
@@ -42,7 +43,6 @@ class SearchViewController: UIViewController {
             .responseJSON { response in
                 if (response.result.error == nil) {
                     debugPrint("HTTP Response Body: \(response.data)")
-                    print(response)
                 }
                 else {
                     debugPrint("HTTP Request failed: \(response.result.error)")

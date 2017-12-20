@@ -12,5 +12,7 @@ target 'panpan' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'Alamofire', '~> 4.5'
+  pod 'SwiftyJSON'
+
 
 end

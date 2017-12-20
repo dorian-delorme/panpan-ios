@@ -14,14 +14,24 @@ import Alamofire
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet weak var AccountCreateButton: UIButton!
+    @IBOutlet weak var LogButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
-        loginButton.delegate = self
         
-        view.addSubview(loginButton)
+        // Facebook Login
+//        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+//        loginButton.center = view.center
+//        loginButton.delegate = self
+//
+//        view.addSubview(loginButton)
+        
+        AccountCreateButton.titleLabel?.textColor = UIColor(red: 35/255, green: 39/255, blue: 50/255, alpha: 1)
+        AccountCreateButton.backgroundColor = UIColor.white
+        LogButton.backgroundColor = UIColor(red: 84/255, green: 193/255, blue: 157/255, alpha: 1)
         
     }
     @IBAction func GoToSigninButton(_ sender: Any) {
@@ -43,31 +53,32 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController : LoginButtonDelegate {
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        // logged out
-    }
-    
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        
-        switch result {
-        case .failed(let error):
-            print(error.localizedDescription)
-            return
-        case .cancelled:
-            print("cancelled")
-        case .success( _, _, let token):
-            let credential = FacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
-            Auth.auth().signIn(with: credential) { (user, error) in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                print("c'est un succès bravo à tous")
-                if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewLogged") as UIViewController? {
-                    self.present(view, animated: true, completion: nil)
-                }
-            }
-        }
-    }
-}
+//extension ViewController : LoginButtonDelegate {
+//    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+//        // logged out
+//    }
+//
+//    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+//
+//        switch result {
+//        case .failed(let error):
+//            print(error.localizedDescription)
+//            return
+//        case .cancelled:
+//            print("cancelled")
+//        case .success( _, _, let token):
+//            let credential = FacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
+//            Auth.auth().signIn(with: credential) { (user, error) in
+//                if let error = error {
+//                    print(error)
+//                    return
+//                }
+//                print("c'est un succès bravo à tous")
+//                if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewLogged") as UIViewController? {
+//                    self.present(view, animated: true, completion: nil)
+//                }
+//            }
+//        }
+//    }
+//}
+
