@@ -43,6 +43,10 @@ class SearchViewController: UIViewController {
             .responseJSON { response in
                 if (response.result.error == nil) {
                     debugPrint("HTTP Response Body: \(response.data)")
+                    let data = response.result.value
+                    let json = JSON(data)
+                    print(json[0]["name"])
+
                 }
                 else {
                     debugPrint("HTTP Request failed: \(response.result.error)")
