@@ -14,11 +14,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var FirstNameTextField: UITextField!
-    @IBOutlet weak var LastNameTextField: UITextField!
-    @IBOutlet weak var EmailSigninTextField: UITextField!
-    @IBOutlet weak var PasswordSigninTextField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,46 +24,21 @@ class ViewController: UIViewController {
         view.addSubview(loginButton)
         
     }
-    @IBAction func SigninButton(_ sender: Any) {
-        sendCreateUserRequest()
+    @IBAction func GoToSigninButton(_ sender: Any) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SigninView") as! SigninViewController
+        self.present(newViewController, animated: true, completion: nil)
+        
+        print("Go to Signin")
     }
     
-    func sendCreateUserRequest() {
-        let name = FirstNameTextField.text! + " " + LastNameTextField.text!
-        let email = EmailSigninTextField.text
-        let password = PasswordSigninTextField.text
+    @IBAction func GoToLoginButton(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
+        self.present(newViewController, animated: true, completion: nil)
         
-        /**
-         Create User
-         post https://panpan-api.herokuapp.com/users
-         */
-        
-        // Add Headers
-        let headers = [
-            "Content-Type":"application/json; charset=utf-8",
-            ]
-        
-        // JSON Body
-        let body: [String : Any] = [
-            "user": [
-                "email": email!,
-                "fullname": name,
-                "password": password!
-            ]
-        ]
-        
-        // Fetch Request
-        Alamofire.request("https://panpan-api.herokuapp.com/users", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                if (response.result.error == nil) {
-                    debugPrint("HTTP Response Body: \(response.data)")
-                    print(response)
-                }
-                else {
-                    debugPrint("HTTP Request failed: \(response.result.error)")
-                }
-        }
+        print("Go to Login")
     }
     
 }
