@@ -273,32 +273,58 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrivée" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-Un-Kke">
-                                <rect key="frame" x="20" y="110.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="200.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="LVT-Ox-eLx">
-                                <rect key="frame" x="20" y="160" width="335" height="133"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="LVT-Ox-eLx">
+                                <rect key="frame" x="20" y="381" width="335" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="535458228.82343">
                                     <!--2017-12-20 10:23:48 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-UP-2en">
+                                <rect key="frame" x="20" y="108" width="335" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqk-Ha-yMX">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickFirstButton:" destination="rWh-ms-1oC" eventType="touchUpInside" id="6yC-7A-Yip"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY3-da-ZjN">
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickSecondButton:" destination="rWh-ms-1oC" eventType="touchUpInside" id="CWi-Mh-9n0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ty-zHc">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickThirdButton:" destination="rWh-ms-1oC" eventType="touchUpInside" id="hHF-ev-jNA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="z8m-94-gJD" firstAttribute="top" secondItem="LVT-Ox-eLx" secondAttribute="bottom" constant="20" id="8mi-T3-EZ1"/>
+                            <constraint firstItem="tEZ-UP-2en" firstAttribute="top" secondItem="94G-ID-fPG" secondAttribute="bottom" constant="7" id="Fti-li-p2E"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="bottom" secondItem="z8m-94-gJD" secondAttribute="bottom" constant="20" id="Hiq-co-5ha"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="Bc9-Un-Kke" secondAttribute="trailing" constant="20" id="Hsa-BU-ZjC"/>
                             <constraint firstItem="94G-ID-fPG" firstAttribute="top" secondItem="GdY-nM-1Gf" secondAttribute="bottom" constant="10" id="IIg-KD-hJZ"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="z8m-94-gJD" secondAttribute="trailing" constant="20" id="MjF-8S-9pZ"/>
                             <constraint firstItem="GdY-nM-1Gf" firstAttribute="top" secondItem="g4h-zg-8XA" secondAttribute="top" constant="20" id="Qq3-w0-7Rl"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="94G-ID-fPG" secondAttribute="trailing" constant="20" id="WVE-GW-Ezq"/>
+                            <constraint firstItem="tEZ-UP-2en" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="WrT-1u-iEh"/>
                             <constraint firstItem="z8m-94-gJD" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="Yts-3D-Unm"/>
                             <constraint firstItem="Bc9-Un-Kke" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="YyW-dh-aNQ"/>
-                            <constraint firstItem="LVT-Ox-eLx" firstAttribute="top" secondItem="Bc9-Un-Kke" secondAttribute="bottom" constant="20" id="fkl-AE-O7B"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="tEZ-UP-2en" secondAttribute="trailing" constant="20" id="cGM-Ok-fNG"/>
                             <constraint firstItem="LVT-Ox-eLx" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="h1N-Ds-U3P"/>
-                            <constraint firstItem="Bc9-Un-Kke" firstAttribute="top" secondItem="94G-ID-fPG" secondAttribute="bottom" constant="10" id="htf-7o-eXl"/>
+                            <constraint firstItem="Bc9-Un-Kke" firstAttribute="top" secondItem="94G-ID-fPG" secondAttribute="bottom" constant="100" id="htf-7o-eXl"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="LVT-Ox-eLx" secondAttribute="trailing" constant="20" id="i99-fS-bTm"/>
                             <constraint firstItem="94G-ID-fPG" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="shR-Rv-iF9"/>
                             <constraint firstItem="GdY-nM-1Gf" firstAttribute="centerX" secondItem="2Kx-eR-sEf" secondAttribute="centerX" id="xx3-4G-7eN"/>
@@ -308,7 +334,10 @@
                     <connections>
                         <outlet property="DepartureTextField" destination="94G-ID-fPG" id="D1z-yC-Jgk"/>
                         <outlet property="DestinationTextField" destination="Bc9-Un-Kke" id="hju-uL-5Dr"/>
+                        <outlet property="FirstSuggestionButton" destination="Qqk-Ha-yMX" id="jVI-Ux-awX"/>
                         <outlet property="SearchDatePicker" destination="LVT-Ox-eLx" id="FFd-Cm-bLz"/>
+                        <outlet property="SecondSuggestionButton" destination="IY3-da-ZjN" id="RJu-3C-ai5"/>
+                        <outlet property="ThirdSuggestionButton" destination="tcI-ty-zHc" id="inf-FJ-f6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlK-mV-9Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -62,7 +62,7 @@ class SigninViewController: UIViewController {
                     debugPrint("HTTP Response Body: \(response.data)")
                     print(response)
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchView ") as! SearchViewController
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchView") as! SearchViewController
                     self.present(newViewController, animated: true, completion: nil)
                 }
                 else {

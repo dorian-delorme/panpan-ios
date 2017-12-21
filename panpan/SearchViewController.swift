@@ -16,6 +16,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var DepartureTextField: UITextField!
     @IBOutlet weak var DestinationTextField: UITextField!
     @IBOutlet weak var SearchDatePicker: UIDatePicker!
+    @IBOutlet weak var FirstSuggestionButton: UIButton!
+    @IBOutlet weak var SecondSuggestionButton: UIButton!
+    @IBOutlet weak var ThirdSuggestionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +33,32 @@ class SearchViewController: UIViewController {
     @IBAction func ValidateSearchButton(_ sender: Any) {
         print(DepartureTextField.text!, "to", DestinationTextField.text!, "the", SearchDatePicker.date )
     }
+    @IBAction func ClickFirstButton(_ sender: UIButton) {
+        DepartureTextField.text = FirstSuggestionButton.title(for: .normal)
+        clearSuggestion()
+    }
+    
+    @IBAction func ClickSecondButton(_ sender: Any) {
+        DepartureTextField.text = SecondSuggestionButton.title(for: .normal)
+        clearSuggestion()
+    }
+    
+    @IBAction func ClickThirdButton(_ sender: Any) {
+        DepartureTextField.text = ThirdSuggestionButton.title(for: .normal)
+        clearSuggestion()
+    }
+    
+    func clearSuggestion() {
+        let empty = ""
+        self.FirstSuggestionButton.setTitle( empty, for: .normal)
+        self.SecondSuggestionButton.setTitle( empty, for: .normal)
+        self.ThirdSuggestionButton.setTitle( empty, for: .normal)
+    }
     
     @IBAction func ValidateButton(_ sender: Any) {
         print("Here goes the autocompletion")
         
         let myString = "https://panpan-api.herokuapp.com/stations/search?term=" + DepartureTextField.text!
-        
-        print(myString)
         
         Alamofire.request(myString, method: .get)
             .validate(statusCode: 200..<300)
@@ -46,6 +68,12 @@ class SearchViewController: UIViewController {
                     let data = response.result.value
                     let json = JSON(data)
                     print(json[0]["name"])
+                    let firstText = json[0]["name"].string
+                    self.FirstSuggestionButton.setTitle( firstText, for: .normal)
+                    let secondText = json[1]["name"].string
+                    self.SecondSuggestionButton.setTitle( secondText, for: .normal)
+                    let thirdText = json[2]["name"].string
+                    self.ThirdSuggestionButton.setTitle( thirdText, for: .normal)
 
                 }
                 else {
