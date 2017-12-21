@@ -10,21 +10,23 @@ import UIKit
 import FirebaseAuth
 import Alamofire
 import SwiftyJSON
+import DatePickerDialog
 
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var DepartureTextField: UITextField!
     @IBOutlet weak var DestinationTextField: UITextField!
-    @IBOutlet weak var SearchDatePicker: UIDatePicker!
     @IBOutlet weak var FirstSuggestionButton: UIButton!
     @IBOutlet weak var SecondSuggestionButton: UIButton!
     @IBOutlet weak var ThirdSuggestionButton: UIButton!
     @IBOutlet weak var FourthSuggestionButton: UIButton!
     @IBOutlet weak var FifthSuggestionButton: UIButton!
     @IBOutlet weak var SixthSuggestionButton: UIButton!
+    @IBOutlet weak var datePickerTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePickerTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +36,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func ValidateSearchButton(_ sender: Any) {
-        print(DepartureTextField.text!, "to", DestinationTextField.text!, "the", SearchDatePicker.date )
+        print(DepartureTextField.text!, "to", DestinationTextField.text! )
     }
     @IBAction func ClickFirstButton(_ sender: UIButton) {
         DepartureTextField.text = FirstSuggestionButton.title(for: .normal)
@@ -128,4 +130,40 @@ class SearchViewController: UIViewController {
         }
     }
     
+    func datePickerTapped() {
+        let currentDate = Date()
+        var dateComponents = DateComponents()
+        dateComponents.month = +1
+        let oneMonthLater = Calendar.current.date(byAdding: dateComponents, to: currentDate)
+        
+        let datePicker = DatePickerDialog(textColor: UIColor(red: 35/255, green: 39/255, blue: 50/255, alpha: 1),
+                                          buttonColor: UIColor(red: 35/255, green: 39/255, blue: 50/255, alpha: 1),
+                                          font: UIFont.boldSystemFont(ofSize: 17),
+                                          showCancelButton: true)
+        datePicker.show("Date du départ",
+                        doneButtonTitle: "Valider",
+                        cancelButtonTitle: "Annuler",
+                        minimumDate: currentDate,
+                        maximumDate: oneMonthLater,
+                        datePickerMode: .date) { (date) in
+                            if let dt = date {
+                                let formatter = DateFormatter()
+                                formatter.dateFormat = "dd/MM/yyyy"
+                                self.datePickerTextField.text = formatter.string(from: dt)
+                            }
+        }
+    }
+    
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ datePickerTextField: UITextField) -> Bool {
+        if datePickerTextField == self.datePickerTextField {
+            datePickerTapped()
+            return false
+        }
+        
+        return true
+    }
 }

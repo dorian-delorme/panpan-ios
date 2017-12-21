@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DatePickerDialog (2.0)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -63,6 +64,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - DatePickerDialog
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -73,6 +75,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FacebookShare: 0469964297ebd75f052be2c5083389a4208e82b7
@@ -89,6 +92,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: e402daafd359e840ab9434c856fcb9984fc64f46
+PODFILE CHECKSUM: 43e27c10956d14521001f274f2bacdb6d4e4d10c
 
 COCOAPODS: 1.3.1

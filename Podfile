@@ -13,6 +13,8 @@ target 'panpan' do
   pod 'FacebookShare'
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
+  pod 'DatePickerDialog'
+
 
 
 end
