@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		23F0DF2B9BEA9451A3CD7DAB /* Pods_panpan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06555BAED893C80E7B2A3FD5 /* Pods_panpan.framework */; };
+		B01DDF981FEC4124006B526B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DDF971FEC4124006B526B /* Trip.swift */; };
 		B050C7071FE7F88300E5F8CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050C7061FE7F88300E5F8CC /* AppDelegate.swift */; };
 		B050C7091FE7F88300E5F8CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050C7081FE7F88300E5F8CC /* ViewController.swift */; };
 		B050C70C1FE7F88300E5F8CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B050C70A1FE7F88300E5F8CC /* Main.storyboard */; };
 		B050C70E1FE7F88300E5F8CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B050C70D1FE7F88300E5F8CC /* Assets.xcassets */; };
 		B050C7111FE7F88300E5F8CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B050C70F1FE7F88300E5F8CC /* LaunchScreen.storyboard */; };
 		B050C7191FE7F91B00E5F8CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B050C7181FE7F91B00E5F8CC /* GoogleService-Info.plist */; };
+		B05C90F21FEC266100AD389B /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C90F11FEC266100AD389B /* TripListViewController.swift */; };
+		B0936A0B1FEC424500E4CB8E /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0936A0A1FEC424500E4CB8E /* TripTableViewCell.swift */; };
 		B0D7B6451FE9C397003D7600 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7B6441FE9C397003D7600 /* LoginViewController.swift */; };
 		B0D7B6471FE9C41E003D7600 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7B6461FE9C41E003D7600 /* SigninViewController.swift */; };
 		B0D9BEE51FE949A3009FFFFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */; };
@@ -22,6 +25,7 @@
 /* Begin PBXFileReference section */
 		06555BAED893C80E7B2A3FD5 /* Pods_panpan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_panpan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1BD18F8149BAB2534E63A9 /* Pods-panpan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panpan.release.xcconfig"; path = "Pods/Target Support Files/Pods-panpan/Pods-panpan.release.xcconfig"; sourceTree = "<group>"; };
+		B01DDF971FEC4124006B526B /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		B050C7031FE7F88300E5F8CC /* panpan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panpan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B050C7061FE7F88300E5F8CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B050C7081FE7F88300E5F8CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		B050C7101FE7F88300E5F8CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B050C7121FE7F88300E5F8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B050C7181FE7F91B00E5F8CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B05C90F11FEC266100AD389B /* TripListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		B0936A0A1FEC424500E4CB8E /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		B0D7B6441FE9C397003D7600 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B0D7B6461FE9C41E003D7600 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,9 @@
 				B0D7B6441FE9C397003D7600 /* LoginViewController.swift */,
 				B0D7B6461FE9C41E003D7600 /* SigninViewController.swift */,
 				B0D9BEE41FE949A3009FFFFB /* SearchViewController.swift */,
+				B0936A0A1FEC424500E4CB8E /* TripTableViewCell.swift */,
+				B05C90F11FEC266100AD389B /* TripListViewController.swift */,
+				B01DDF971FEC4124006B526B /* Trip.swift */,
 				B050C70A1FE7F88300E5F8CC /* Main.storyboard */,
 				B050C70D1FE7F88300E5F8CC /* Assets.xcassets */,
 				B050C70F1FE7F88300E5F8CC /* LaunchScreen.storyboard */,
@@ -208,6 +217,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -224,6 +234,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -257,6 +268,9 @@
 				B0D7B6451FE9C397003D7600 /* LoginViewController.swift in Sources */,
 				B0D7B6471FE9C41E003D7600 /* SigninViewController.swift in Sources */,
 				B0D9BEE51FE949A3009FFFFB /* SearchViewController.swift in Sources */,
+				B01DDF981FEC4124006B526B /* Trip.swift in Sources */,
+				B0936A0B1FEC424500E4CB8E /* TripTableViewCell.swift in Sources */,
+				B05C90F21FEC266100AD389B /* TripListViewController.swift in Sources */,
 				B050C7091FE7F88300E5F8CC /* ViewController.swift in Sources */,
 				B050C7071FE7F88300E5F8CC /* AppDelegate.swift in Sources */,
 			);

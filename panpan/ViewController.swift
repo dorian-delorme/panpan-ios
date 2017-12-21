@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import FirebaseAuth
+import FirebaseCore
 import Alamofire
 
 class ViewController: UIViewController {
@@ -31,9 +32,9 @@ class ViewController: UIViewController {
         
         AccountCreateButton.titleLabel?.textColor = UIColor(red: 35/255, green: 39/255, blue: 50/255, alpha: 1)
         AccountCreateButton.backgroundColor = UIColor.white
-        LogButton.backgroundColor = UIColor(red: 84/255, green: 193/255, blue: 157/255, alpha: 1)
-        
+        LogButton.backgroundColor = UIColor(red: 92/255, green: 133/255, blue: 218/255, alpha: 1)
     }
+    
     @IBAction func GoToSigninButton(_ sender: Any) {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
         self.present(newViewController, animated: true, completion: nil)
+
         
         print("Go to Login")
     }

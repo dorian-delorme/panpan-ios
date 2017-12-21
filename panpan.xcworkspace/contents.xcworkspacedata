@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Trip.swift">
+   </FileRef>
+   <FileRef
       location = "group:panpan.xcodeproj">
    </FileRef>
    <FileRef

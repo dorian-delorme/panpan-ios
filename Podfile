@@ -14,7 +14,6 @@ target 'panpan' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
   pod 'DatePickerDialog'
-
-
+  pod 'KeychainSwift'
 
 end

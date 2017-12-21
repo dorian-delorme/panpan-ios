@@ -8,15 +8,20 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import KeychainSwift
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var EmailLoginTextField: UITextField!
     @IBOutlet weak var PasswordLoginTextField: UITextField!
+    @IBOutlet weak var LoginButton: UIButton!
+    
+    let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        LoginButton.backgroundColor = UIColor(red: 92/255, green: 133/255, blue: 218/255, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
@@ -57,7 +62,11 @@ class LoginViewController: UIViewController {
             .responseJSON { response in
                 if (response.result.error == nil) {
                     debugPrint("HTTP Response Body: \(response.data)")
-                    print(response)
+                    let data = response.result.value
+                    let json = JSON(data)
+                    let saver = json["jwt"].string
+                    self.keychain.set(saver!, forKey: "jwt")
+                    print(self.keychain.get("jwt"))
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchView") as! SearchViewController
                     self.present(newViewController, animated: true, completion: nil)

@@ -15,10 +15,11 @@ class SigninViewController: UIViewController {
     @IBOutlet weak var LastNameTextField: UITextField!
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var SigninButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        SigninButton.backgroundColor = UIColor(red: 92/255, green: 133/255, blue: 218/255, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
