@@ -277,14 +277,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DestinationChangedEvent:" destination="rWh-ms-1oC" eventType="editingChanged" id="347-se-onv"/>
+                                </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="LVT-Ox-eLx">
-                                <rect key="frame" x="20" y="381" width="335" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="535458228.82343">
-                                    <!--2017-12-20 10:23:48 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="fr"/>
-                            </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tEZ-UP-2en">
                                 <rect key="frame" x="20" y="108" width="335" height="90"/>
                                 <subviews>
@@ -308,6 +304,36 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="LVT-Ox-eLx">
+                                <rect key="frame" x="20" y="381" width="335" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="535458228.82343">
+                                    <!--2017-12-20 10:23:48 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="fr"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wRa-gJ-FW4">
+                                <rect key="frame" x="20" y="238" width="335" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-hQ-U6f">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickFourthButton:" destination="rWh-ms-1oC" eventType="touchUpInside" id="rE3-5y-qqa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8na-EY-uhh">
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickFifthSuggestion:" destination="rWh-ms-1oC" eventType="touchUpInside" id="1cg-az-4Vd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-SF-W5c">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="30"/>
+                                        <connections>
+                                            <action selector="ClickSixthSuggestion:" destination="rWh-ms-1oC" eventType="touchUpInside" id="CPo-Qs-WKM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -323,10 +349,13 @@
                             <constraint firstItem="z8m-94-gJD" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="Yts-3D-Unm"/>
                             <constraint firstItem="Bc9-Un-Kke" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="YyW-dh-aNQ"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="tEZ-UP-2en" secondAttribute="trailing" constant="20" id="cGM-Ok-fNG"/>
+                            <constraint firstItem="wRa-gJ-FW4" firstAttribute="top" secondItem="Bc9-Un-Kke" secondAttribute="bottom" constant="7" id="d2c-qf-oLL"/>
                             <constraint firstItem="LVT-Ox-eLx" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="h1N-Ds-U3P"/>
                             <constraint firstItem="Bc9-Un-Kke" firstAttribute="top" secondItem="94G-ID-fPG" secondAttribute="bottom" constant="100" id="htf-7o-eXl"/>
                             <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="LVT-Ox-eLx" secondAttribute="trailing" constant="20" id="i99-fS-bTm"/>
+                            <constraint firstItem="g4h-zg-8XA" firstAttribute="trailing" secondItem="wRa-gJ-FW4" secondAttribute="trailing" constant="20" id="jCd-dI-Mpf"/>
                             <constraint firstItem="94G-ID-fPG" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="shR-Rv-iF9"/>
+                            <constraint firstItem="wRa-gJ-FW4" firstAttribute="leading" secondItem="g4h-zg-8XA" secondAttribute="leading" constant="20" id="vuy-Mj-tEY"/>
                             <constraint firstItem="GdY-nM-1Gf" firstAttribute="centerX" secondItem="2Kx-eR-sEf" secondAttribute="centerX" id="xx3-4G-7eN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g4h-zg-8XA"/>
@@ -334,9 +363,12 @@
                     <connections>
                         <outlet property="DepartureTextField" destination="94G-ID-fPG" id="D1z-yC-Jgk"/>
                         <outlet property="DestinationTextField" destination="Bc9-Un-Kke" id="hju-uL-5Dr"/>
+                        <outlet property="FifthSuggestionButton" destination="8na-EY-uhh" id="iiV-t6-Iqz"/>
                         <outlet property="FirstSuggestionButton" destination="Qqk-Ha-yMX" id="jVI-Ux-awX"/>
+                        <outlet property="FourthSuggestionButton" destination="XKU-hQ-U6f" id="WAS-Yi-7H2"/>
                         <outlet property="SearchDatePicker" destination="LVT-Ox-eLx" id="FFd-Cm-bLz"/>
                         <outlet property="SecondSuggestionButton" destination="IY3-da-ZjN" id="RJu-3C-ai5"/>
+                        <outlet property="SixthSuggestionButton" destination="rsE-SF-W5c" id="pNJ-yi-Icf"/>
                         <outlet property="ThirdSuggestionButton" destination="tcI-ty-zHc" id="inf-FJ-f6j"/>
                     </connections>
                 </viewController>
