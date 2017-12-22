@@ -11,6 +11,7 @@ import UIKit
 class TripTableViewCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ class TripTableViewCell: UITableViewCell {
     
     func setup(withTheHours trip: Trip) {
         self.label.text = "\(trip.hours)"
+        self.secondLabel.text = "\(trip.date)"
     }
     
 }

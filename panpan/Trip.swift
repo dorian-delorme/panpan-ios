@@ -10,10 +10,10 @@ import Foundation
 
 class Trip {
     let hours: String
-    var duration: Float
+    var date: String
     
-    init(withTheHours newHours: String, andADurationOf newDuration: Float) {
+    init(withTheHours newHours: String, andADateOf newDate: String) {
         self.hours = newHours
-        self.duration = newDuration
+        self.date = newDate
     }
 }

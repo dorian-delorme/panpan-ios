@@ -107,18 +107,17 @@ class SearchViewController: UIViewController {
             ]
         
         // Form URL-Encoded Body
-        // FRFAC FRECE 2017-12-24 10:00:00 22:00:00
-//        FRPST" \
-//        --data-urlencode "end_station=FRENC" \
-//        --data-urlencode "start_time=08:00:00" \
-//        --data-urlencode "end_time=21:00:00" \
-//        --data-urlencode "date=2018-01-17"
         let body = [
             "start_station": "FRPST", //departure
             "end_station":  "FRENC", //destination
             "start_time": "08:00:00", //start
             "end_time": "21:00:00", //end
             "date": "2018-01-17", //date
+//            "start_station": departure,
+//            "end_station":  destination,
+//            "start_time": start,
+//            "end_time": end,
+//            "date": date
             ]
         
         // Fetch Request
@@ -131,6 +130,8 @@ class SearchViewController: UIViewController {
                     let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "tripList") as! TripListViewController
                     newViewController.data = data
                     self.present(newViewController, animated: true, completion: nil)
+//                    self.keychain.set(self.departure, forKey: "departure")
+//                    self.keychain.set(self.destination, forKey: "destination")
                     
                 }
                 else {

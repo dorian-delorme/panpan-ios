@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import KeychainSwift
 
 class TripListViewController: UIViewController {
     
@@ -15,7 +16,12 @@ class TripListViewController: UIViewController {
     
     var tripList = [Trip]()
     
+    let keychain = KeychainSwift()
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var DepartureLabel: UILabel!
+    @IBOutlet weak var DestinationLabel: UILabel!
+    @IBOutlet weak var DataLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +32,13 @@ class TripListViewController: UIViewController {
         tableView.dataSource = self
         
        json.forEach { data in
-        // let hour = trip[index]["start_time"]
-        // self.tripList.append(Trip(withTheHours: hour, andADurationOf: 4.5))
+            let (_, trip) = data
+        DepartureLabel.text = trip["start_station"]["name"].string!
+        DestinationLabel.text = trip["end_station"]["name"].string!
+        DataLabel.text = trip["date"].string!
+        let hour = String(trip["start_time"].string!.characters.dropLast(3)) + "  -  " + String(trip["end_time"].string!.characters.dropLast(3))
+        let date = trip["date"].string!
+        self.tripList.append(Trip(withTheHours: hour, andADateOf: date))
         }
         
 //        let trip = Trip(withTheHours: "SEND", andADurationOf: 4.5)
@@ -69,8 +80,8 @@ extension TripListViewController : UITableViewDataSource {
             let index = indexPath.row
             let trip = self.tripList[index]
 
-            print("index: \(index)")
-            print("title: \(trip.hours)")
+            // print("index: \(index)")
+            // print("title: \(trip.hours)")
             
             tripCell.setup(withTheHours: trip)
             
