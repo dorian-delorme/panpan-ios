@@ -22,10 +22,17 @@ class TripListViewController: UIViewController {
         
         // all trips in this json
         let json = JSON(data)
-        print(json[0])
-
-        let trip = Trip(withTheHours: "Rick and Morty", andADurationOf: 4.5)
-        self.tripList.append(trip)
+        
+        tableView.dataSource = self
+        
+       json.forEach { data in
+        // let hour = trip[index]["start_time"]
+        // self.tripList.append(Trip(withTheHours: hour, andADurationOf: 4.5))
+        }
+        
+//        let trip = Trip(withTheHours: "SEND", andADurationOf: 4.5)
+//        self.tripList.append(trip)
+//        self.tripList.append(Trip(withTheHours: "NUDES", andADurationOf: 4.5))
 
         // Do any additional setup after loading the view.
     }
